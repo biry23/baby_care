@@ -1,4 +1,37 @@
 Rails.application.routes.draw do
+  namespace :public do
+    get 'comments/index'
+    get 'comments/show'
+  end
+  namespace :public do
+    get 'posts/new'
+    get 'posts/index'
+    get 'posts/edit'
+    get 'posts/show'
+  end
+  namespace :public do
+    get 'members/show'
+    get 'members/edit'
+  end
+  namespace :public do
+    get 'homes/top'
+    get 'homes/about'
+  end
+  namespace :admin do
+    get 'genres/index'
+    get 'genres/edit'
+  end
+  namespace :admin do
+    get 'posts/index'
+    get 'posts/show'
+  end
+  namespace :admin do
+    get 'members/index'
+    get 'members/show'
+  end
+  namespace :admin do
+    get 'homes/top'
+  end
   # public
   devise_for :members,skip: [:passwords], controllers: {
     registrations: "public/registrations",
