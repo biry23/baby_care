@@ -6,10 +6,11 @@ Rails.application.routes.draw do
   }
   scope module: 'public' do
     root to: "homes#top"
-    get "/about" => "homes#about", as: "about"
-    get "/members/my_page" => "members#show", as: "members"
-    get "/members/edit" => "members#edit", as: "members_edit"
-    patch "/members" => "members#update", as: "members_update"
+    # get "/about" => "homes#about", as: "about"
+    # get "/members/my_page" => "members#show", as: "members"
+    # get "/members/edit" => "members#edit", as: "members_edit"
+    # patch "/members" => "members#update", as: "members_update"
+    resources :members, except: [:new, :create]
     resources :posts do
       collection do
         get "top"
