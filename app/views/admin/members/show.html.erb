@@ -1,2 +1,22 @@
-<h1>Admin::Members#show</h1>
-<p>Find me in app/views/admin/members/show.html.erb</p>
+<h1><%= @member.name %>さんのユーザー詳細</h1>
+<table>
+  <tbody>
+    <tr>
+      <th>ユーザーid</th>
+      <td><%= @member.id %></td>
+    </tr>
+    <tr>
+      <th>メールアドレス</th>
+      <td><%= @member.email %></td>
+    </tr>
+    <tr>
+      <th>性別</th>
+      <td><%= @member.gender %></td>
+    </tr>
+    <tr>
+      <th>年齢</th>
+      <td><%= @member.age %></td>
+    </tr>
+  </tbody>
+</table>
+<%= current_member.posts.count %>
