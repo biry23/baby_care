@@ -1,2 +1,19 @@
-<h1>Admin::Posts#index</h1>
-<p>Find me in app/views/admin/posts/index.html.erb</p>
+<h1>投稿一覧</h1>
+<table>
+  <thead>
+    <tr>
+      <th>タイトル</th>
+      <th>ニックネーム</th>
+      <th>投稿日</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @posts.each do |post| %>
+    <tr>
+      <td><%= link_to post.title, admin_post_path(post.id) %></td>
+      <td><%= post.members.name %></td>
+      <td><%= post.create_at %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
