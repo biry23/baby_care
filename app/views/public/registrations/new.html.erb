@@ -24,6 +24,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :自己紹介 %>
+    <%= f.text_field :introduction, autofocus: true, autocomplete: "introduction" %>
+  </div>
+
+  <div class="field">
     <%= f.label :パスワード %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> 文字以上)</em>
