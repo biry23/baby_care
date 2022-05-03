@@ -1,4 +1,4 @@
-<h1><%= @member.name %>さんのユーザー詳細</h1>
+<h1><%= @member.member_name %>さんのユーザー詳細</h1>
 <table>
   <tbody>
     <tr>
@@ -17,6 +17,10 @@
       <th>年齢</th>
       <td><%= @member.age %></td>
     </tr>
+    <tr>
+      <th>投稿数</th>
+      <td><%= @member.posts.count %></td>
+    </tr>
   </tbody>
 </table>
-<%= current_member.posts.count %>
+

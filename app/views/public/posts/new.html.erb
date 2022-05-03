@@ -12,7 +12,7 @@
       </tr>
       <tr>
         <th>投稿ジャンル</th>
-        <td></td>
+        <td><%= f.collection_select :genre_id, Genre.all, :id, :genre_name, include_blank: "-- 選択してください --" %></td>
       </tr>
     </tbody>
   </table>

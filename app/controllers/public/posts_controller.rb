@@ -22,12 +22,15 @@ class Public::PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def update
+  end
+
   def show
     @post =Post.find(params[:id])
   end
 
   private
   def post_params
-    params.require(:post).permit(:title, :text)
+    params.require(:post).permit(:title, :text, :genre_id)
   end
 end
