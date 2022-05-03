@@ -1,2 +1,20 @@
-<h1>Public::Posts#new</h1>
-<p>Find me in app/views/public/posts/new.html.erb</p>
+<h1>新規投稿</h1>
+<%= form_with model: @post, url: posts_path, method: :post do |f| %>
+  <table>
+    <tbody>
+      <tr>
+        <th>title</th>
+        <td><%= f.text_field :title %></td>
+      </tr>
+      <tr>
+        <th>本文</th>
+        <td><%= f.text_field :text %></td>
+      </tr>
+      <tr>
+        <th>投稿ジャンル</th>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <%= f.submit "投稿確定！" %>
+<% end %>

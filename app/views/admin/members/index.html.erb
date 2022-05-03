@@ -13,7 +13,7 @@
     <% @members.each do |member| %>
     <tr>
       <td><%= member.id %></td>
-      <td><%= link_to member.name, admin_member_path(member.id) %></td>
+      <td><%= link_to member.member_name, admin_member_path(member.id) %></td>
       <td><%= member.email %></td>
       <td><%= current_member.posts.count %></td>
       <td><%= member.crated_at %></td>
