@@ -2,6 +2,31 @@
 <%= link_to @post.member.member_name, member_path(@post.member.id) %>
 <%= @post.title %>
 <%= @post.text %>
+<%= @post.created_at %>
+<%= link_to "編集", edit_post_path(@post.id) %>
+<%= form_for [@post, @comment] do |f| %>
+    <%= f.text_area :comment_text %>
+    <%= f.submit "コメント投稿" %>
+<% end %>
+
+<table>
+    <thead>
+        <tr>
+            <th>コメント投稿者</th>
+            <th>コメント内容</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @comments.each do |comment| %>
+            <tr>
+                <td><%= comment.member.member_name %></td>
+                <td><%= comment.comment_text %></td>
+                <td><%= link_to "削除", post_path(@post, comment), method: :delete %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
 
 
 

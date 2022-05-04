@@ -12,12 +12,12 @@ Rails.application.routes.draw do
     # patch "/members" => "members#update", as: "members_update"
     resources :members, except: [:new, :create]
     resources :posts do
+      resources :comments, only: [:create, :destroy]
       collection do
         get "top"
       end
       resources :favorites, only: [:create, :destroy]
     end
-    resources :comments, except: [:new, :edit, :update]
   end
 
   # admin
