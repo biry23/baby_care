@@ -8,6 +8,9 @@
     <%= f.text_area :comment_text %>
     <%= f.submit "コメント投稿" %>
 <% end %>
+<div class='star-btn' id="favorite_button_<%= @post.id %>">
+    <%= render "public/favorites/favorite", post: @post %>
+</div>
 
 <table>
     <thead>

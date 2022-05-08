@@ -18,6 +18,10 @@ class Public::PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def my_posts
+    @posts = current_member.posts
+  end
+
   def edit
     @post = Post.find(params[:id])
   end

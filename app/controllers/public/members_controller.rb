@@ -4,6 +4,18 @@ class Public::MembersController < ApplicationController
     @members = Member.all
   end
 
+  def my_page
+    @member = current_member
+  end
+
+  def favorite
+    @member = Member.find(params[:id])
+    # ログイン中のユーザーのお気に入りのpost_idカラムを取得
+    favorites = Favorite.where(member_id: current_member.id).pluck(:post_id)
+    # postsテーブルから、お気に入り登録済みのレコードを取得
+    @favorite_list = Post.find(favorites)
+  end
+
   def show
     @member = Member.find(params[:id])
   end

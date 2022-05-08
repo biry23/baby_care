@@ -1,0 +1,9 @@
+<%= @member.member_name %>さんのお気に入り
+<% if @favorite_list.length != 0 %>
+  <% @favorite_list.each do |post| %>
+    <%= link_to post.title, post_path(post) %>
+    <%= post.member.member_name %>
+  <% end %>
+<% else %>
+  現在、お気に入り登録はありません
+<% end %>

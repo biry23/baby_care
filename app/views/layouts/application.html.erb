@@ -15,7 +15,7 @@
       <%= link_to "Baby Care", root_path %>
       <% if member_signed_in? %>
 
-        <%= link_to member_path(current_member.id) do %>
+        <%= link_to members_my_page_path do %>
         マイページ
         <% end %>
 

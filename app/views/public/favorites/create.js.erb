@@ -1,0 +1,1 @@
+$('.post-favorite').html('<%= link_to "保存済み", post_favorite_path(@post,@post.favorited_by(current_member)), method: :delete, remote: true, class: "btn btn-outline-success btn-sm" %>');

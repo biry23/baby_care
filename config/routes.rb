@@ -7,10 +7,16 @@ Rails.application.routes.draw do
   scope module: 'public' do
     root to: "homes#top"
     get "/about" => "homes#about", as: "about"
+    get "/members/my_page" => "members#my_page"
+    get "/posts/my_posts" => "posts#my_posts"
     # get "/members/my_page" => "members#show", as: "members"
     # get "/members/edit" => "members#edit", as: "members_edit"
     # patch "/members" => "members#update", as: "members_update"
-    resources :members, except: [:new, :create]
+    resources :members, except: [:new, :create] do
+      member do
+        get :favorite
+      end
+    end
     resources :posts do
       resources :comments, only: [:create, :destroy]
       collection do
