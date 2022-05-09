@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       resources :comments, only: [:create, :destroy]
       collection do
         get "top"
+        get "search"
       end
       resources :favorites, only: [:create, :destroy]
     end

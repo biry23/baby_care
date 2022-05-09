@@ -1,0 +1,4 @@
+<h2>検索結果 "<%= @keyword %>"</h2>
+<% @posts.each do |post| %>
+  <%= link_to post.title, post_path(post.id) %>
+<% end %>

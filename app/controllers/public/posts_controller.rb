@@ -22,6 +22,16 @@ class Public::PostsController < ApplicationController
     @posts = current_member.posts
   end
 
+  def search
+    if params[:keyword].present?
+      @posts = Post.where('title LIKE ?', "%#{params[:keyword]}%")
+      @keyword = params[:keyword]
+    else
+      # 何も入力せずに検索した場合、すべての投稿を取得
+      @posts = Post.all
+    end
+  end
+
   def edit
     @post = Post.find(params[:id])
   end
