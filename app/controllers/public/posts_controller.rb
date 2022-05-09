@@ -30,9 +30,15 @@ class Public::PostsController < ApplicationController
   end
 
   def show
-    @post =Post.find(params[:id])
+    @post = Post.find(params[:id])
     @comment = Comment.new
     @comments = @post.comments
+  end
+
+  def destroy
+    post = Post.find(params[:id])
+    post.destroy
+    redirect_to posts_my_posts_path
   end
 
   private

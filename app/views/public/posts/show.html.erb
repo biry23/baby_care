@@ -3,7 +3,9 @@
 <%= @post.title %>
 <%= @post.text %>
 <%= @post.created_at %>
-<%= link_to "編集", edit_post_path(@post.id) %>
+<% if member_signed_in? && current_member.id == @post.member.id %>
+    <%= link_to "編集", edit_post_path(@post.id) %>
+<% end %>
 <%= form_for [@post, @comment] do |f| %>
     <%= f.text_area :comment_text %>
     <%= f.submit "コメント投稿" %>
@@ -25,7 +27,9 @@
             <tr>
                 <td><%= comment.member.member_name %></td>
                 <td><%= comment.comment_text %></td>
-                <td><%= link_to "削除", post_path(@post, comment), method: :delete %></td>
+                <% if member_signed_in? && current_member.id == comment.member.id %>
+                    <td><%= link_to "削除", post_path(@post, comment), url: post_comment_path(comment.id), method: :delete %></td>
+                <% end %>
             </tr>
         <% end %>
     </tbody>
