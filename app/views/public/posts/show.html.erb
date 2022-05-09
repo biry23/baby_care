@@ -6,6 +6,7 @@
 <% if member_signed_in? && current_member.id == @post.member.id %>
     <%= link_to "編集", edit_post_path(@post.id) %>
 <% end %>
+
 <%= form_for [@post, @comment] do |f| %>
     <%= f.text_area :comment_text %>
     <%= f.submit "コメント投稿" %>
