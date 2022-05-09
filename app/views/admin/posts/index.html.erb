@@ -11,8 +11,8 @@
     <% @posts.each do |post| %>
     <tr>
       <td><%= link_to post.title, admin_post_path(post.id) %></td>
-      <td><%= post.members.name %></td>
-      <td><%= post.create_at %></td>
+      <td><%= post.member.member_name %></td>
+      <td><%= post.created_at %></td>
     </tr>
     <% end %>
   </tbody>
