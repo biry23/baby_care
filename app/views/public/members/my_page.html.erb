@@ -16,7 +16,9 @@
     </tr>
     <tr>
       <th>性別</th>
-      <td><%= @member.gender %></td>
+      <td>
+        <%= @member.gender == 0 ? '男性' : '女性' %>
+      </td>
     </tr>
     <tr>
       <th>投稿数</th>

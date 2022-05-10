@@ -3,18 +3,20 @@ class Public::FavoritesController < ApplicationController
   def create
     @favorite = current_member.favorites.build(favorite_params)
     @post = @favorite.post
-    if @favorite.valid?
-      @favorite.save
-      respond_to :js
-    end
+    @favorite.save
+    # if @favorite.valid?
+    #   @favorite.save
+    #   respond_to :js
+    # end
   end
 
   def destroy
     @favorite = Favorite.find(params[:id])
     @post = @favorite.post
-    if @favorite.destroy
-      respond_to :js
-    end
+    @favorite.destroy
+    # if @favorite.destroy
+    #   respond_to :js
+    # end
   end
 
   private
