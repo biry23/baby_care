@@ -1,0 +1,13 @@
+ja:
+  activerecord:
+    attributes:
+      member:
+        member_name: ニックネーム
+        email: メールアドレス
+        password: パスワード
+        gender: 性別
+        age: 年齢
+        introduction: 自己紹介文
+      post:
+        title: タイトル
+        text: 本文
