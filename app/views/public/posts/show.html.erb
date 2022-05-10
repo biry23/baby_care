@@ -2,10 +2,11 @@
 <%= link_to @post.member.member_name, member_path(@post.member.id) %>
 <%= @post.title %>
 <%= @post.text %>
-<%= @post.created_at %>
+<%= @post.created_at.strftime("%Y年%m月%d日") %>
 <% if member_signed_in? && current_member.id == @post.member.id %>
     <%= link_to "編集", edit_post_path(@post.id) %>
 <% end %>
+
 
 <%= form_for [@post, @comment] do |f| %>
     <%= f.text_area :comment_text %>
@@ -29,7 +30,7 @@
                 <td><%= comment.member.member_name %></td>
                 <td><%= comment.comment_text %></td>
                 <% if member_signed_in? && current_member.id == comment.member.id %>
-                    <td><%= link_to "削除", post_path(@post, comment), url: post_comment_path(comment.id), method: :delete %></td>
+                    <td><%= link_to "削除", post_comment_path(@post, comment), method: :delete %></td>
                 <% end %>
             </tr>
         <% end %>

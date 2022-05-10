@@ -1,9 +1,9 @@
 <% if current_member != @post.member %>
   <div class="post-favorite">
     <% if @post.favorited_by(current_member).blank? %>
-      <%= link_to "お気に入り保存", post_favorites_path(@post), method: :post, remote: true, class: "btn btn-success btn-sm" %>
+      <%= link_to "お気に入り保存", post_favorites_path(@post), method: :post, remote: true, data: {"turbolinks" => false}, class: "btn btn-success btn-sm" %>
     <% else %>
-      <%= link_to "保存済み", post_favorite_path(@post,@post.favorited_by(current_member)), method: :delete, remote: true, class: "btn btn-outline-success btn-sm" %>
+      <%= link_to "保存済み", post_favorite_path(@post,@post.favorited_by(current_member)), method: :delete, remote: true, data: {"turbolinks" => false}, class: "btn btn-outline-success btn-sm" %>
     <% end %>
   </div>
 <% end %>

@@ -12,8 +12,9 @@
 
   <body>
     <header>
-      <%= link_to "Baby Care", root_path %>
+
       <% if member_signed_in? %>
+        <%= link_to "Baby Care", root_path %>
 
         <%= link_to members_my_page_path do %>
         マイページ
@@ -32,6 +33,7 @@
         <% end %>
 
         <% elsif admin_signed_in? %>
+        <%= link_to "Baby Care", admin_root_path %>
 
         <%= link_to admin_members_path do %>
         ユーザー一覧
@@ -50,6 +52,8 @@
         <% end %>
 
         <% else %>
+        <%= link_to "Baby Care", root_path %>
+
         <%= link_to new_member_registration_path do %>
         新規登録
         <% end %>

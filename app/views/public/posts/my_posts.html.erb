@@ -4,7 +4,7 @@
     <tr>
       <th>タイトル</th>
       <th>本文</th>
-      <th>投稿日時</th>
+      <th>投稿日</th>
       <th></th>
     </tr>
   </thead>
@@ -13,7 +13,7 @@
     <tr>
       <td><%= post.title %></td>
       <td><%= post.text %></td>
-      <td><%= post.created_at %></td>
+      <td><%= post.created_at.strftime("%Y年%m月%d日") %></td>
       <td><%= link_to "削除", post_path(post.id), method: :delete %></td>
     </tr>
     <% end %>

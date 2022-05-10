@@ -1,4 +1,4 @@
-<h1><%= @post.title %></h1>
+<h2><%= @post.title %></h2>
 <%= @post.text %>
-<%= link_to @post.members.name, admin_member_path(@post.members.id) %>
+<%= link_to @post.member.member_name, admin_member_path(@post.member.id) %>
 
