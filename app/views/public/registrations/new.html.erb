@@ -1,50 +1,71 @@
-<h2>新規登録</h2>
+<div class="registration">
+  <div class="new-member">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "public/shared/error_messages", resource: resource %>
+      <h2>新規登録</h2>
+      <div class="new-name">
+        <%= f.label :ニックネーム %><br />
+        <%= f.text_field :member_name, autofocus: true, autocomplete: "member_name", placeholder: "例）2児のママ" %>
+      </div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "public/shared/error_messages", resource: resource %>
+      <div class="new-email">
+        <%= f.label :メールアドレス %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
 
-  <div class="filed">
-    <%= f.label :ニックネーム %><br />
-    <%= f.text_field :member_name, autofocus: true, autocomplete: "member_name", placeholder: "例）2児のママ" %>
+      <div class="new-age">
+        <%= f.label :年齢 %><br />
+        <%= f.text_field :age, autofocus: true, autocomplete: "age" %>
+      </div>
+
+      <div class="new-gender">
+        <%= f.label :性別 %><br />
+        <%= f.radio_button :gender, 0, autofocus: true, autocomplete: "gender" %> 男性
+        <%= f.radio_button :gender, 1, autofocus: true, autocomplete: "gender" %> 女性
+      </div>
+
+      <div class="new-introduction">
+        <%= f.label :自己紹介 %><br />
+        <%= f.text_area :introduction, autofocus: true, autocomplete: "introduction" %>
+      </div>
+
+      <div class="new-password">
+        <%= f.label :パスワード %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> 文字以上)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password", placeholder: "６文字以上の半角英数字" %>
+      </div>
+
+      <div class="new-password">
+        <%= f.label :確認用パスワード %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "同じパスワードを入力" %>
+      </div>
+
+      <div class="new-signup">
+        <%= f.submit "新規登録" %>
+      </div>
+    <% end %>
+    <div class="new-login">
+      <p><span>-------------</span> すでに登録されてますか？ <span>-------------</span></p>
+      <%= link_to "ログイン", new_member_session_path %>
+    </div>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :メールアドレス %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
 
-  <div class="field">
-    <%= f.label :年齢 %><br />
-    <%= f.text_field :age, autofocus: true, autocomplete: "age" %>
-  </div>
 
-  <div class="field">
-    <%= f.label :性別 %><br />
-    <%= f.radio_button :gender, 0, autofocus: true, autocomplete: "gender" %> 男性
-    <%= f.radio_button :gender, 1, autofocus: true, autocomplete: "gender" %> 女性
-  </div>
 
-  <div class="field">
-    <%= f.label :自己紹介 %><br />
-    <%= f.text_area :introduction, autofocus: true, autocomplete: "introduction" %>
-  </div>
 
-  <div class="field">
-    <%= f.label :パスワード %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> 文字以上)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password", placeholder: "６文字以上の半角英数字" %>
-  </div>
 
-  <div class="field">
-    <%= f.label :確認用パスワード %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "同じパスワードを入力" %>
-  </div>
 
-  <div class="actions">
-    <%= f.submit "新規登録" %>
-  </div>
-<% end %>
 
-<%= link_to "ログイン", new_member_session_path %> は、こちらから
+
+
+
+
+
+
+
+
+
