@@ -1,26 +1,37 @@
-<h1><%= @member.member_name %>さんのユーザー詳細</h1>
-<table>
-  <tbody>
-    <tr>
-      <th>ユーザーid</th>
-      <td><%= @member.id %></td>
-    </tr>
-    <tr>
-      <th>メールアドレス</th>
-      <td><%= @member.email %></td>
-    </tr>
-    <tr>
-      <th>性別</th>
-      <td><%= @member.gender %></td>
-    </tr>
-    <tr>
-      <th>年齢</th>
-      <td><%= @member.age %></td>
-    </tr>
-    <tr>
-      <th>投稿数</th>
-      <td><%= @member.posts.count %></td>
-    </tr>
-  </tbody>
-</table>
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-12 text-center">
+      <h1><%= @member.member_name %>さんのユーザー詳細</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 px-5 text-center">
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <th scope="col" style="width: 30%">ユーザーid</th>
+            <td><%= @member.id %></td>
+          </tr>
+          <tr>
+            <th scope="col" style="width: 30%">メールアドレス</th>
+            <td><%= @member.email %></td>
+          </tr>
+          <tr>
+            <th scope="col" style="width: 30%">性別</th>
+            <td><%= @member.gender %></td>
+          </tr>
+          <tr>
+            <th scope="col" style="width: 30%">年齢</th>
+            <td><%= @member.age %></td>
+          </tr>
+          <tr>
+            <th scope="col" style="width: 30%">投稿数</th>
+            <td><%= @member.posts.count %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
 

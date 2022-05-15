@@ -1,6 +1,7 @@
 <div class="box">
   <div class="box-inner">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= render "admin/shared/links" %>
       <h2>管理者ログイン</h2>
       <div class="box-email">
         <%= f.label :email, "メールアドレス" %><br />
@@ -15,15 +16,13 @@
 
       <div class="box-login">
         <%= f.submit "ログイン" %>
-          <% if devise_mapping.rememberable? %>
-            <div class="remember">
-              <%= f.check_box :remember_me %>
-              <%= f.label :内容を保持 %>
-            </div>
-          <% end %>
+        <% if devise_mapping.rememberable? %>
+          <div class="remember">
+            <%= f.check_box :remember_me %>
+            <%= f.label :内容を保持 %>
+          </div>
+        <% end %>
       </div>
     <% end %>
-
-    <%= render "admin/shared/links" %>
   </div>
 </div>

@@ -12,104 +12,67 @@
 
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Baby Care</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <% if member_signed_in? %>
-              <li class="nav-item active">
-                <%= link_to "Topへ", root_path %>
-              </li>
+          <% if member_signed_in? %>
 
-              <li class="nav-item">
-                <%= link_to members_my_page_path do %>
-                  マイページ
-                <% end %>
-              </li>
+              <%= link_to "Topへ", root_path %>
 
-              <li class="nav-item">
-                <%= link_to about_path do %>
-                  About
-                <% end %>
-              </li>
-
-              <li class="nav-item">
-                <%= link_to posts_path do %>
-                  全ての投稿一覧
-                <% end %>
-              </li>
-
-              <li class="nav-item">
-                <%= link_to destroy_member_session_path, method: :delete do %>
-                  ログアウト
-                <% end %>
-              </li>
-
-              <% elsif admin_signed_in? %>
-
-              <li class="nav-item">
-                <%= link_to "Topへ", admin_root_path %>
-              </li>
-
-              <li class="nav-item">
-                <%= link_to admin_members_path do %>
-                  ユーザー一覧
-                <% end %>
-              </li>
-
-              <li class="nav-item">
-                <%= link_to admin_posts_path do %>
-                  投稿一覧
-                <% end %>
-              </li>
-
-              <li class="nav-item">
-                <%= link_to admin_genres_path do %>
-                  ジャンル一覧
-                <% end %>
-              </li>
-
-              <li class="nav-item">
-                <%= link_to destroy_admin_session_path, method: :delete do %>
-                  ログアウト
-                <% end %>
-              </li>
-
-              <% else %>
-
-              <li class="nav-item">
-                <%= link_to "Topへ", root_path %>
-              </li>
-
-              <li class="nav-item">
-                <%= link_to new_member_registration_path do %>
-                  新規登録
-                <% end %>
-              </li>
-
-              <li class="nav-item">
-                <%= link_to new_member_session_path do %>
-                  ログイン
-                <% end %>
-              </li>
-
-              <li class="nav-item">
-                <%= link_to about_path do %>
-                  About
-                <% end %>
-              </li>
-
-              <li class="nav-item">
-                <%= link_to posts_path do %>
-                  投稿一覧
-                <% end %>
-              </li>
+            <%= link_to members_my_page_path do %>
+            マイページ
             <% end %>
-          </ul>
-        </div>
+
+            <%= link_to about_path do %>
+            About
+            <% end %>
+
+            <%= link_to posts_path do %>
+            全ての投稿一覧
+            <% end %>
+
+            <%= link_to destroy_member_session_path, method: :delete do %>
+            ログアウト
+            <% end %>
+
+            <% elsif admin_signed_in? %>
+
+            <%= link_to "Topへ", admin_root_path %>
+
+            <%= link_to admin_members_path do %>
+            ユーザー一覧
+            <% end %>
+
+            <%= link_to admin_posts_path do %>
+            投稿一覧
+            <% end %>
+
+            <%= link_to admin_genres_path do %>
+            ジャンル一覧
+            <% end %>
+
+
+            <%= link_to destroy_admin_session_path, method: :delete do %>
+            ログアウト
+            <% end %>
+
+            <% else %>
+
+            <%= link_to "Topへ", root_path %>
+
+            <%= link_to new_member_registration_path do %>
+            新規登録
+            <% end %>
+
+            <%= link_to new_member_session_path do %>
+            ログイン
+            <% end %>
+
+            <%= link_to about_path do %>
+            About
+            <% end %>
+
+            <%= link_to posts_path do %>
+            投稿一覧
+            <% end %>
+          <% end %>
       </nav>
     </header>
     <%= yield %>

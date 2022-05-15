@@ -1,19 +1,29 @@
-<h1>投稿一覧</h1>
-<table>
-  <thead>
-    <tr>
-      <th>タイトル</th>
-      <th>ニックネーム</th>
-      <th>投稿日</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @posts.each do |post| %>
-    <tr>
-      <td><%= link_to post.title, admin_post_path(post.id) %></td>
-      <td><%= post.member.member_name %></td>
-      <td><%= post.created_at.strftime("%Y年%m月%d日") %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h1>投稿一覧</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <table class="table">
+        <thead class="bg-light">
+          <tr>
+            <th>タイトル</th>
+            <th>ニックネーム</th>
+            <th>投稿日</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @posts.each do |post| %>
+          <tr>
+            <td><%= link_to post.title, admin_post_path(post.id) %></td>
+            <td><%= post.member.member_name %></td>
+            <td><%= post.created_at.strftime("%Y年%m月%d日") %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

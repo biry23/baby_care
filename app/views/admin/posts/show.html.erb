@@ -1,4 +1,21 @@
-<h2><%= @post.title %></h2>
-<%= @post.text %>
-<%= link_to @post.member.member_name, admin_member_path(@post.member.id) %>
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-12 text-center">
+      <h2><%= @post.title %></h2>
+    </div>
+  </div>
+  <div class="row my-3">
+    <div class="col-md-12 text-center border">
+      <%= @post.text %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 text-right">
+      <%= link_to @post.member.member_name, admin_member_path(@post.member.id) %>
+    </div>
+  </div>
+</div>
+
+
+
 
