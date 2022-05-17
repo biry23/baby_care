@@ -1,26 +1,27 @@
-<div class=""></div>
-<h1>TOP</h1>
-<h3>新着投稿</h3>
-<table>
-    <thead>
-        <tr>
-            <th>ニックネーム</th>
-            <th>タイトル</th>
-        </tr>
-    </thead>
-    <tbody>
-        <% @posts.each do |post| %>
-        <tr>
-            <td><%= link_to post.member.member_name, member_path(post.member.id) %></td>
-            <td><%= link_to post.title, post_path(post.id) %></td>
-        </tr>
-        <% end %>
-    </tbody>
-</table>
-<% if member_signed_in? %>
-  <%= link_to "投稿する", new_post_path %>
-<% else %>
-  <%= link_to "投稿する", new_post_path %>
-  <%= link_to "新規登録", new_member_registration_path %>
-  <%= link_to "ログイン", new_member_session_path %>
-<% end %>
+<div class="top">
+  <h1 class="top-title">TOP</h1>
+  <h3 class="top-new-posts">新着投稿</h3>
+  <table class="top-table">
+      <thead>
+          <tr>
+              <th class="top-th">ニックネーム</th>
+              <th class="top-th">タイトル</th>
+          </tr>
+      </thead>
+      <tbody>
+          <% @posts.each do |post| %>
+          <tr>
+              <td class="top-td"><%= link_to post.member.member_name, member_path(post.member.id) %></td>
+              <td class="top-td"><%= link_to post.title, post_path(post.id) %></td>
+          </tr>
+          <% end %>
+      </tbody>
+  </table>
+  <% if member_signed_in? %>
+    <div class="top-bottom"><%= link_to "投稿する", new_post_path %></div>
+  <% else %>
+    <div class="top-bottom"><%= link_to "投稿する", new_post_path %></div>
+    <div class="top-bottom"><%= link_to "新規登録", new_member_registration_path %></div>
+    <div class="top-bottom"><%= link_to "ログイン", new_member_session_path %></div>
+  <% end %>
+</div>
