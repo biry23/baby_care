@@ -24,7 +24,7 @@
             <li class="header-mypage"><%= link_to members_my_page_path do %>マイページ<% end %></li>
             <li class="header-about"><%= link_to about_path do %>About<% end %></li>
             <li class="header-posts"><%= link_to posts_path do %>全ての投稿一覧<% end %></li>
-            <li class="header-logout"><%= link_to destroy_member_session_path, method: :delete do %>ログアウト<% end %></li>
+            <li class="header-logout"><%= link_to destroy_member_session_path, method: :get do %>ログアウト<% end %></li>
           </ul>
         </div>
       <% elsif admin_signed_in? %>
@@ -39,7 +39,7 @@
             <li class="header-members"><%= link_to admin_members_path do %>ユーザー一覧<% end %></li>
             <li class="header-posts"><%= link_to admin_posts_path do %>投稿一覧<% end %></li>
             <li class="header-genre"><%= link_to admin_genres_path do %>ジャンル一覧<% end %></li>
-            <li class="header-logout"><%= link_to destroy_admin_session_path, method: :delete do %>ログアウト<% end %></li>
+            <li class="header-logout"><%= link_to destroy_admin_session_path, method: :get do %>ログアウト<% end %></li>
           </ul>
         </div>
       <% else %>
