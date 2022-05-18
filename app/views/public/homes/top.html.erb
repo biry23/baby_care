@@ -17,11 +17,13 @@
           <% end %>
       </tbody>
   </table>
+  <div class="top-bottom">
   <% if member_signed_in? %>
-    <div class="top-bottom"><%= link_to "投稿する", new_post_path %></div>
+    <%= link_to "投稿する", new_post_path %>
   <% else %>
-    <div class="top-bottom"><%= link_to "投稿する", new_post_path %></div>
-    <div class="top-bottom"><%= link_to "新規登録", new_member_registration_path %></div>
-    <div class="top-bottom"><%= link_to "ログイン", new_member_session_path %></div>
+    <%= link_to "投稿する", new_post_path %>
+    <%= link_to "新規登録", new_member_registration_path %>
+    <%= link_to "ログイン", new_member_session_path %>
   <% end %>
+  </div>
 </div>

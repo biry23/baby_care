@@ -20,11 +20,11 @@
   text-align: center;
 }
 
-.my-page-bottom li {
+.my-page-bottom a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
+  margin: 30px auto;
   padding: 1em 2em;
   width: 200px;
   color: #2285b1;
@@ -34,7 +34,7 @@
   border-radius: 10px;
 }
 
-.my-page-bottom li::after {
+.my-page-bottom a::after {
   content: '';
   width: 5px;
   height: 5px;
@@ -43,13 +43,32 @@
   transform: rotate(45deg);
 }
 
-.my-page-bottom li:hover {
+.my-page-bottom a:hover {
   color: #333333;
   text-decoration: none;
   background-color: #a0c4d3;
 }
 
-.my-page-bottom li:hover::after {
+.my-page-bottom a:hover::after {
   border-top: 3px solid #333333;
   border-right: 3px solid #333333;
+}
+
+.my-page-table {
+  width: 600px;
+  margin: auto;
+  text-align: center;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.my-page-th {
+  padding: 10px;
+  background: #e9faf9;
+  border: solid 1px #778ca3;
+}
+
+.my-page-td {
+  padding: 10px;
+  border: solid 1px #778ca3;
 }

@@ -3,41 +3,41 @@
     <h1>マイページ</h1>
   </div>
   <div class="my-page-bottom">
-    <li><%= link_to "プロフィール編集", edit_member_path(@member.id) %></li>
+    <%= link_to "プロフィール編集", edit_member_path(@member.id) %>
   </div>
   <table class="my-page-table">
     <tbody>
       <tr>
-        <th>ニックネーム</th>
-        <td><%= @member.member_name %></td>
+        <th class="my-page-th">ニックネーム</th>
+        <td class="my-page-td"><%= @member.member_name %></td>
       </tr>
       <tr>
-        <th>メールアドレス</th>
-        <td><%= @member.email %></td>
+        <th class="my-page-th">メールアドレス</th>
+        <td class="my-page-td"><%= @member.email %></td>
       </tr>
       <tr>
-        <th>年齢</th>
-        <td><%= @member.age %></td>
+        <th class="my-page-th">年齢</th>
+        <td class="my-page-td"><%= @member.age %></td>
       </tr>
       <tr>
-        <th>性別</th>
-        <td>
+        <th class="my-page-th">性別</th>
+        <td class="my-page-td">
           <%= @member.gender == 0 ? '男性' : '女性' %>
         </td>
       </tr>
       <tr>
-        <th>投稿数</th>
-        <td><%= @member.posts.count %></td>
+        <th class="my-page-th">投稿数</th>
+        <td class="my-page-td"><%= @member.posts.count %></td>
       </tr>
       <tr>
-        <th>コメント投稿数</th>
-        <td><%= @member.comments.count %></td>
+        <th class="my-page-th">コメント投稿数</th>
+        <td class="my-page-td"><%= @member.comments.count %></td>
       </tr>
     </tbody>
   </table>
   <div class="my-page-bottom">
-    <li><%= link_to "お気に入り一覧", favorite_member_path(@member.id) %></li>
-    <li><%= link_to "投稿履歴", posts_my_posts_path %></li>
-    <li><%= link_to "投稿する", new_post_path %></li>
+    <%= link_to "お気に入り一覧", favorite_member_path(@member.id) %>
+    <%= link_to "投稿履歴", posts_my_posts_path %>
+    <%= link_to "投稿する", new_post_path %>
   </div>
 </div>
