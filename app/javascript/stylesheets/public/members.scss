@@ -1,3 +1,55 @@
 // Place all the styles related to the public/members controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+// my_page.html.erbのcss
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+}
+
+.my-page {
+  width: 100%;
+  height: 400px;
+  margin: 30px;
+}
+
+.my-page-title {
+  width: 100%;
+  margin: 30px;
+  text-align: center;
+}
+
+.my-page-bottom li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 1em 2em;
+  width: 200px;
+  color: #2285b1;
+  font-size: 15px;
+  font-weight: 700;
+  border: 3px solid #a0c4d3;
+  border-radius: 10px;
+}
+
+.my-page-bottom li::after {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-top: 3px solid #2285b1;
+  border-right: 3px solid #2285b1;
+  transform: rotate(45deg);
+}
+
+.my-page-bottom li:hover {
+  color: #333333;
+  text-decoration: none;
+  background-color: #a0c4d3;
+}
+
+.my-page-bottom li:hover::after {
+  border-top: 3px solid #333333;
+  border-right: 3px solid #333333;
+}
