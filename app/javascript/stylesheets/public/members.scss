@@ -3,9 +3,9 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 // my_page.html.erbのcss
 * {
-  margin: 0px;
-  padding: 0px;
-  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .my-page {

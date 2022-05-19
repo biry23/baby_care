@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -64,5 +65,9 @@
           </div>
     </header>
     <%= yield %>
+    <footer class="footer">
+      <div class="footer-text">© 2022 BabyCare lnc.All rights reserved.</div>
+    </footer>
   </body>
+
 </html>
