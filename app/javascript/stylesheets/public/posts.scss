@@ -75,3 +75,53 @@
   padding: 10px;
   border: solid 1px #778ca3;
 }
+
+.post-all {
+  width: 100%;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items:flex-end
+}
+
+.post-all-title {
+  width: 600px;
+}
+
+.post-search {
+  width: 240px;
+}
+
+.post-title-show {
+  width: 100%;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-show-title {
+  padding-right: 50px;
+}
+
+.post-show-table {
+  width: 100%;
+  margin: 20px;
+}
+
+.post-show-lists {
+  list-style: none;
+  text-align: center;
+}
+
+.post-show-lists hr {
+  width: 300px;
+  margin: 0 auto;
+  border-top: 3px double #aaa;
+}
+
+.post-list-item {
+  padding: 10px 0 20px;
+  font-size: 20px;
+}
+
