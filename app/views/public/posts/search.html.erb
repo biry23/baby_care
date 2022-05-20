@@ -1,4 +1,8 @@
-<h2>検索結果 "<%= @keyword %>"</h2>
-<% @posts.each do |post| %>
-  <%= link_to post.title, post_path(post.id) %>
-<% end %>
+<div class="search">
+  <h2>検索結果 "<%= @keyword %>"</h2>
+  <div class="search-result">
+  <% @posts.each do |post| %>
+    <%= link_to post.title, post_path(post.id) %>
+  <% end %>
+  </div>
+</div>
