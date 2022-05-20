@@ -26,25 +26,27 @@
     </ul>
   </div>
   <div class="comment">
-    <%= form_for [@post, @comment] do |f| %>
+    <div class="comment-box">
+      <%= form_for [@post, @comment] do |f| %>
         <%= f.text_area :comment_text %>
         <%= f.submit "コメント投稿" %>
-    <% end %>
-    <table>
+      <% end %>
+    </div>
+    <table class="comment-table">
         <thead>
             <tr>
-                <th>コメント投稿者</th>
-                <th>コメント内容</th>
-                <th></th>
+                <th class="comment-th">コメント投稿者</th>
+                <th class="comment-th">コメント内容</th>
+                <th class="comment-th"></th>
             </tr>
         </thead>
         <tbody>
             <% @comments.each do |comment| %>
                 <tr>
-                    <td><%= comment.member.member_name %></td>
-                    <td><%= comment.comment_text %></td>
+                    <td class="comment-td"><%= comment.member.member_name %></td>
+                    <td class="comment-td"><%= comment.comment_text %></td>
                     <% if member_signed_in? && current_member.id == comment.member.id %>
-                        <td><%= link_to "削除", post_comment_path(@post, comment), method: :delete %></td>
+                        <td class="comment-td"><%= link_to "削除", post_comment_path(@post, comment), method: :delete %></td>
                     <% end %>
                 </tr>
             <% end %>
