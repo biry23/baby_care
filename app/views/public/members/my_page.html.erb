@@ -2,7 +2,7 @@
   <div class="my-page-title">
     <h1>マイページ</h1>
   </div>
-  <div class="my-page-bottom">
+  <div class="my-page-button">
     <%= link_to "プロフィール編集", edit_member_path(@member.id) %>
   </div>
   <table class="my-page-table">
@@ -35,7 +35,7 @@
       </tr>
     </tbody>
   </table>
-  <div class="my-page-bottom">
+  <div class="my-page-button">
     <%= link_to "お気に入り一覧", favorite_member_path(@member.id) %>
     <%= link_to "投稿履歴", posts_my_posts_path %>
     <%= link_to "投稿する", new_post_path %>

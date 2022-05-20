@@ -20,7 +20,7 @@
   text-align: center;
 }
 
-.my-page-bottom a {
+.my-page-button a {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -34,7 +34,7 @@
   border-radius: 10px;
 }
 
-.my-page-bottom a::after {
+.my-page-button a::after {
   content: '';
   width: 5px;
   height: 5px;
@@ -43,13 +43,13 @@
   transform: rotate(45deg);
 }
 
-.my-page-bottom a:hover {
+.my-page-button a:hover {
   color: #333333;
   text-decoration: none;
   background-color: #a0c4d3;
 }
 
-.my-page-bottom a:hover::after {
+.my-page-button a:hover::after {
   border-top: 3px solid #333333;
   border-right: 3px solid #333333;
 }
@@ -72,3 +72,15 @@
   padding: 10px;
   border: solid 1px #778ca3;
 }
+
+.member {
+  width: 100%;
+  margin: 30px;
+}
+
+.member-title {
+  width: 100%;
+  text-align: center;
+  margin: 20px 0;
+}
+
