@@ -1,5 +1,4 @@
-<div class="post">
-  <div class="post-new">
+<div class="post-new">
     <div class="post-title">
       <h1>新規投稿</h1>
     </div>
@@ -14,23 +13,10 @@
     <% end %>
   </div>
   <%= form_with model: @post, url: posts_path, method: :post do |f| %>
-    <table>
-      <tbody>
-        <tr>
-          <th>title</th>
-          <td><%= f.text_field :title %></td>
-        </tr>
-        <tr>
-          <th>本文</th>
-          <td><%= f.text_area :text %></td>
-        </tr>
-        <tr>
-          <th>投稿ジャンル</th>
-          <td><%= f.collection_select :genre_id, Genre.all, :id, :genre_name, include_blank: "-- 選択してください --" %></td>
-        </tr>
-      </tbody>
-    </table>
-    <%= f.submit "投稿確定！" %>
+    <div class="new-title">title</div>
+    <div class="new-title-field"><%= f.text_field :title %></div>
+    <div class="new-text">本文</div>
+    <div class="new-text-field"><%= f.text_area :text %></div>
+    <div class="post-button"><%= f.submit "投稿確定！" %></div>
   <% end %>
-  </div>
 </div>
