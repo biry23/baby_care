@@ -7,7 +7,7 @@
   box-sizing: border-box;
 }
 
-.post-new {
+.post {
   width: 100%;
   margin: 30px;
 }
@@ -55,4 +55,23 @@
   margin: 0 auto;
   padding-top: 30px;
   text-align: right;
+}
+
+.post-table {
+  width: 90%;
+  text-align: center;
+  margin: 20px 40px 20px;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.post-th {
+  padding: 10px;
+  background: #e9faf9;
+  border: solid 1px #778ca3;
+}
+
+.post-td {
+  padding: 10px;
+  border: solid 1px #778ca3;
 }

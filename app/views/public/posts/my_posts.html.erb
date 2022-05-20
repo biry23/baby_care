@@ -1,21 +1,25 @@
-<h1>あなたの投稿一覧</h1>
-<table>
-  <thead>
-    <tr>
-      <th>タイトル</th>
-      <th>本文</th>
-      <th>投稿日</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @posts.each do |post| %>
-    <tr>
-      <td><%= post.title %></td>
-      <td><%= post.text %></td>
-      <td><%= post.created_at.strftime("%Y年%m月%d日") %></td>
-      <td><%= link_to "削除", post_path(post.id), method: :delete %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="post">
+  <h1 class="post-title">あなたの投稿一覧</h1>
+  <table class="post-table">
+    <thead>
+      <tr>
+        <th class="post-th">タイトル</th>
+        <th class="post-th">本文</th>
+        <th class="post-th">投稿日</th>
+        <th class="post-th"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @posts.each do |post| %>
+      <tr>
+        <td class="post-td"><%= post.title %></td>
+        <td class="post-td"><%= post.text %></td>
+        <td class="post-td"><%= post.created_at.strftime("%Y年%m月%d日") %></td>
+        <td class="post-td">
+          <span class="mypost-delete"><%= link_to "削除", post_path(post.id), method: :delete %></span>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
