@@ -7,7 +7,7 @@
       <tr>
         <th class="favorite-th">タイトル</th>
         <th class="favorite-th">投稿者</th>
-        <th></th>
+        <th class="favorite-th"></th>
       </tr>
     </thead>
     <tbady>
@@ -16,7 +16,7 @@
           <tr>
             <td class="favorite-td"><%= link_to post.title, post_path(post) %></td>
             <td class="favorite-td"><%= post.member.member_name %></td>
-            <td class="favorite-td"><%= render "public/favorites/favorite", post: @post %></td>
+            <td class="favorite-td"><%= render "public/favorites/favorite", post: post %></td>
           </tr>
         <% end %>
       <% else %>

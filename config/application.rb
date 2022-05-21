@@ -6,11 +6,13 @@ require "rails/all"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+Dotenv::Railtie.load
+
 module BabyCare
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
-    
+
     # 日本語の言語設定
     config.i18n.default_locale = :ja
 
