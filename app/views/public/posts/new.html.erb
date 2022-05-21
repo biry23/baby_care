@@ -13,10 +13,10 @@
     <% end %>
   </div>
   <%= form_with model: @post, url: posts_path, method: :post do |f| %>
-    <div class="new-title">title</div>
-    <div class="new-title-field"><%= f.text_field :title %></div>
+    <div class="new-title">タイトル</div>
+    <div class="new-title-field"><%= f.text_field :title, size: "30" %></div>
     <div class="new-text">本文</div>
-    <div class="new-text-field"><%= f.text_area :text %></div>
+    <div class="new-text-field"><%= f.text_area :text, size: "50x5" %></div>
     <div class="post-button"><%= f.submit "投稿確定！" %></div>
   <% end %>
 </div>
