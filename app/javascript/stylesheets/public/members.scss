@@ -84,3 +84,34 @@
   margin: 20px 0;
 }
 
+.favorite {
+  width: 100%;
+  margin: 30px;
+}
+
+.favorite-title {
+  width: 100%;
+  text-align: center;
+  margin: 20px 0;
+  font-size: 30px;
+}
+
+.favorite-table {
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-top: solid 1px #778ca3
+}
+
+.favorite-th {
+  padding: 10px;
+  border-bottom: solid 1px #778ca3;
+  background-color: #FF9933;
+}
+
+.favorite-td {
+  padding: 10px;
+  border-bottom: solid 1px #778ca3;
+}

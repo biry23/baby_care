@@ -1,9 +1,25 @@
-<%= @member.member_name %>さんのお気に入り
-<% if @favorite_list.length != 0 %>
-  <% @favorite_list.each do |post| %>
-    <%= link_to post.title, post_path(post) %>
-    <%= post.member.member_name %>
-  <% end %>
-<% else %>
-  現在、お気に入り登録はありません
-<% end %>
+<div class="favorite">
+  <div class="favorite-title">
+    <%= @member.member_name %>さんのお気に入り
+  </div>
+  <table class="favorite-table">
+    <thead>
+      <tr>
+        <th class="favorite-th">タイトル</th>
+        <th class="favorite-th">投稿者</th>
+      </tr>
+    </thead>
+    <tbady>
+      <% if @favorite_list.length != 0 %>
+        <% @favorite_list.each do |post| %>
+          <tr>
+            <td class="favorite-td"><%= link_to post.title, post_path(post) %></td>
+            <td class="favorite-td"><%= post.member.member_name %></td>
+          </tr>
+        <% end %>
+      <% else %>
+        現在、お気に入り登録はありません
+      <% end %>
+    </tbady>
+  </table>
+</div>
