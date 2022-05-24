@@ -3,7 +3,7 @@
     <h1>マイページ</h1>
   </div>
   <div class="my-page-button">
-    <%= link_to "プロフィール編集", edit_member_path(@member.id) %>
+    <%= link_to "プロフィール編集", edit_member_path(@member.id), data: {"turbolinks" => false} %>
   </div>
   <table class="my-page-table">
     <tbody>

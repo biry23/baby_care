@@ -21,11 +21,14 @@ class Public::MembersController < ApplicationController
   end
 
   def edit
-    @member = current_member
+    # binding.pry
+    # @member = current_member
+    @member = Member.find(params[:id])
   end
 
   def update
-    @member = current_member
+    # @member = current_member
+    @member = Member.find(params[:id])
     if @member.update(member_params)
       redirect_to members_my_page_path
     end

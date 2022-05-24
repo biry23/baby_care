@@ -26,6 +26,7 @@
 
 ### 設計書
 ---
+https://docs.google.com/spreadsheets/d/1QQXXigoO8yQy0Q97HrfOuFg-cWxTCJJHGyds-LOaD3Y/edit?usp=sharing
 
 ### チャレンジ要素
 ---

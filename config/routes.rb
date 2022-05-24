@@ -9,9 +9,6 @@ Rails.application.routes.draw do
     get "/about" => "homes#about", as: "about"
     get "/members/my_page" => "members#my_page"
     get "/posts/my_posts" => "posts#my_posts"
-    # get "/members/my_page" => "members#show", as: "members"
-    # get "/members/edit" => "members#edit", as: "members_edit"
-    # patch "/members" => "members#update", as: "members_update"
     resources :members, except: [:new, :create] do
       member do
         get :favorite
@@ -32,7 +29,6 @@ Rails.application.routes.draw do
     root to: "homes#top"
     resources :members, only: [:show, :index]
     resources :posts, only: [:show, :index]
-    resources :genres, except: [:destroy, :show, :new]
   end
   devise_for :admin,skip: [:registrations, :passwords], controllers: {
     sessions: "admin/sessions"
