@@ -39,3 +39,8 @@ https://docs.google.com/spreadsheets/d/1jEFi0FtAjTlIao0dynnqKiXQpVWaHAuM9T4zoFcH
 - フレームワーク :Ruby on Rails
 - JSライブラリ :jQuery
 - IDE :Cloud9
+
+### 使用素材
+---
+フリー画像
+- O-DAN URL:https://unsplash.com/photos/Z39a7lqZusU
